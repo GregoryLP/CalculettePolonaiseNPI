@@ -6,7 +6,8 @@ def evaluate_npi(expression: str):
         if token.isdigit():
             stack.append(int(token))
         else:
-            a, b = stack.pop()
+            a = stack.pop()
+            b = stack.pop()
             if token == "+":
                 stack.append((a + b))
             elif token == "-":

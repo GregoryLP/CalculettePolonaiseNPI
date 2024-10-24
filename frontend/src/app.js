@@ -5,13 +5,22 @@ function App() {
     const [result, setResult] = useState('');
 
     const handleClick = async () => {
-        const response = await fetch('/api/calculate', {
+        console.log('expression:', expression);
+        if (!expression) {
+            console.error('Veuillez entrer une expression');
+            return;
+        }
+        const response = await fetch('http://localhost:8000/api/calculate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({expression}),
         });
+        if (!response.ok) {
+          console.error('Erreur lors de la requête:', response.status, response.statusText);
+          return;
+        }
         const data = await response.json();
         setResult(data.result);
     };

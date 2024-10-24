@@ -1,14 +1,14 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
-from app.shemas import CalculInput
-from app.crud import saveCalculation, getCalculations
-from app.utils import evaluate_npi
+from shemas import CalculInput
+from crud import saveCalculation, getCalculations
+from utils import evaluate_npi
 import csv
 import io
 
 router = APIRouter()
 
-@router.post("/calcul")
+@router.post("/calculate")
 async def calculate(input: CalculInput):
     try: 
         result = evaluate_npi(input.expression)
