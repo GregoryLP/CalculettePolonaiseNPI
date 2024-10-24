@@ -1,4 +1,6 @@
+"""Utility functions for the calculator app."""
 def evaluate_npi(expression: str):
+    """Evaluate an expression in Reverse Polish Notation (RPN) or Polish Notation (PN)"""
     stack = []
     tokens = expression.split()
 
@@ -22,6 +24,6 @@ def evaluate_npi(expression: str):
             raise ValueError(f"Invalid token: {token}")
 
     if len(stack) != 1:
-        raise ValueError("The user input has too many values or not enough values to produce a single result.")
+        raise ValueError("The input has too many values or not enough values to produce a result.")
 
     return stack[0]
