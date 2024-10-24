@@ -11,7 +11,7 @@ from app.utils import evaluate_npi
 router = APIRouter()
 
 @router.post("/calculate")
-async def calculate(calculation_input = CalculInput):
+async def calculate(calculation_input: CalculInput):
     """Calculate the result of an expression"""
     try:
         result = evaluate_npi(calculation_input.expression)

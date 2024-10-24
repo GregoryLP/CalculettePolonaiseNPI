@@ -36,7 +36,7 @@ function App() {
             }
         }
 
-        const response = await fetch(URL+'/api/calculate', {
+        const response = await fetch(URL +'api/calculate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ function App() {
 
     const handleDownload = async () => {
         try{
-            const response = await fetch(URL+'/api/exportCalcul', {
+            const response = await fetch(URL+'api/exportCalcul', {
                 method: 'GET',
                 
             });
