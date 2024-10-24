@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models import Calculation
-from database import SessionLocal
+from app.models import Calculation
+from app.database import SessionLocal
 
 async def saveCalculation(expression: str, result: str):
     session = SessionLocal()
